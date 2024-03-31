@@ -26,6 +26,7 @@ def insert_contract_into_code(entry_point, code, contract):
         next(line for line in lines if line.startswith(f"def {entry_point}"))
     )
     lines.insert(index + 1, contract)
+    print(check_correctness(contract))
     return "\n".join(lines)
 
 
